@@ -217,4 +217,5 @@ return {
 		end,
 		run = 'make', -- Optional, only if you want to  tiktoken_core to calculate tokens count
 	},
+	{ 'AndreM222/copilot-lualine' },
 }
