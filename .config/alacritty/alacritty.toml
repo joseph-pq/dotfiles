@@ -63,3 +63,6 @@ program = "/bin/zsh"
 
 [window]
 opacity = 0.999
+
+[font.normal]
+family = "0xProto Nerd Font"
