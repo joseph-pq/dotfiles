@@ -2,7 +2,7 @@ return {
 
 	-- I have a separate config.mappings file where I require which-key.
 	-- With lazy the plugin will be automatically loaded when it is required somewhere
-	{ "folke/which-key.nvim", lazy = true },
+	{ "folke/which-key.nvim",   lazy = true },
 
 	{
 		"nvim-neorg/neorg",
@@ -43,13 +43,13 @@ return {
 	{
 		"nvim-tree/nvim-web-devicons",
 		config = function()
-			require("nvim-web-devicons").setup({default=true})
+			require("nvim-web-devicons").setup({ default = true })
 		end
 	},
 
 	-- you can use the VeryLazy event for things that can
 	-- load later and are not important for the initial UI
-	{ "stevearc/dressing.nvim",      event = "VeryLazy" },
+	{ "stevearc/dressing.nvim", event = "VeryLazy" },
 
 	{
 		"Wansmer/treesj",
@@ -98,9 +98,9 @@ return {
 	},
 
 	{ 'lukas-reineke/indent-blankline.nvim' }, -- Indent guides
-	{ 'tpope/vim-sleuth' },                 -- Automatically set indent settings
-    { 'tpope/vim-commentary' },
-    { 'tpope/vim-surround' },
+	{ 'tpope/vim-sleuth' },             -- Automatically set indent settings
+	{ 'tpope/vim-commentary' },
+	{ 'tpope/vim-surround' },
 
 	-- LSP
 	{
