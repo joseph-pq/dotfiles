@@ -36,14 +36,16 @@ return {
 			"hrsh7th/cmp-nvim-lsp",
 			"hrsh7th/cmp-buffer",
 		},
-		config = function()
-			-- ...
-		end,
 	},
 
 	-- if some code requires a module from an unloaded plugin, it will be automatically loaded.
 	-- So for api plugins like devicons, we can always set lazy=true
-	{ "nvim-tree/nvim-web-devicons", lazy = true },
+	{
+		"nvim-tree/nvim-web-devicons",
+		config = function()
+			require("nvim-web-devicons").setup({default=true})
+		end
+	},
 
 	-- you can use the VeryLazy event for things that can
 	-- load later and are not important for the initial UI
