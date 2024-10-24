@@ -98,7 +98,7 @@ return {
 	},
 
 	{ 'lukas-reineke/indent-blankline.nvim' }, -- Indent guides
-	{ 'tpope/vim-sleuth' },             -- Automatically set indent settings
+	{ 'tpope/vim-sleuth' },                 -- Automatically set indent settings
 	{ 'tpope/vim-commentary' },
 	{ 'tpope/vim-surround' },
 
