@@ -76,11 +76,6 @@ return {
 	-- This will use {config.dev.path}/noice.nvim/ instead of fetching it from GitHub
 	-- With the dev option, you can easily switch between the local and installed version of a plugin
 	{ "folke/noice.nvim",                         dev = true },
-	-- Telescope.nvim
-	{
-		'nvim-telescope/telescope.nvim',
-		dependencies = { 'nvim-lua/plenary.nvim' }
-	},
 	-- Highlight, edit, and navigate code
 	{ "nvim-treesitter/nvim-treesitter", build = ":TSUpdate" },
 	{
