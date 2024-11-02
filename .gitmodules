@@ -1,3 +1,6 @@
 [submodule ".config/alacritty/themes/alacritty-theme"]
 	path = .config/alacritty/themes/alacritty-theme
 	url = https://github.com/alacritty/alacritty-theme
+[submodule ".config/nvim"]
+	path = .config/nvim
+	url = git@github.com:joseph-pq/nvim.git
