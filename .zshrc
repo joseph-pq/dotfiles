@@ -223,7 +223,7 @@ export GEM_HOME="$HOME/gems"
 export PATH="$HOME/gems/bin:$PATH"
 
 alias gcg="git config --edit --global"
-alias gcl="git config --edit --local"
+# alias gcl="git config --edit --local"
 
 # Pyenv
 export PYENV_ROOT="$HOME/.pyenv"
@@ -281,3 +281,21 @@ alias cdn="cd $(mktemp -d)"
 
 # Set vi mode in ipython
 alias ipython="ipython --TerminalInteractiveShell.editing_mode=vi"
+# gitlab-ci-local
+export GCL_NEEDS='true'
+export GCL_FILE='.gitlab-ci.yml'
+export GCL_VARIABLE="IMAGE=python:3.8-slim"
+_gitlab-ci-local_yargs_completions()
+{
+  local reply
+  local si=$IFS
+  IFS=$'
+' reply=($(COMP_CWORD="$((CURRENT-1))" COMP_LINE="$BUFFER" COMP_POINT="$CURSOR" /usr/local/bin/gitlab-ci-local --get-yargs-completions "${words[@]}"))
+  IFS=$si
+  _describe 'values' reply
+}
+compdef _gitlab-ci-local_yargs_completions gitlab-ci-local
+export GCL_TIMESTAMPS=true # or --timestamps: show timestamps in logs
+export GCL_MAX_JOB_NAME_PADDING=30 # or --maxJobNamePadding: limit padding around job name
+export GCL_QUIET=true # or --quiet: Suppress all job output
+alias gcl='gitlab-ci-local'
