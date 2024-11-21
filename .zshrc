@@ -234,7 +234,7 @@ export PATH="$PATH:$HOME/.tmux/plugins/tmuxifier/bin"
 alias tm='tmuxifier'
 
 # android
-alias android="/opt/android-studio/bin/studio.sh"
+alias android="/opt/android-studio/bin/studio"
 export ANDROID_HOME=$HOME/Android/Sdk
 export PATH="$PATH:$ANDROID_HOME/emulator"
 export PATH="$PATH:$ANDROID_HOME/platform-tools"
