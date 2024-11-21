@@ -1,4 +1,4 @@
-import = ["~/.local/share/nvim/lazy/tokyonight.nvim/extras/alacritty/tokyonight_night.toml"]
+import = ["~/.local/share/nvim/lazy/kanagawa.nvim/extras/alacritty_kanagawa.toml"]
 
 [[keyboard.bindings]]
 action = "SpawnNewInstance"
