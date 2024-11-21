@@ -281,6 +281,8 @@ alias cdn="cd $(mktemp -d)"
 
 # Set vi mode in ipython
 alias ipython="ipython --TerminalInteractiveShell.editing_mode=vi"
+alias pdebugpy="poetry run python -m debugpy --wait-for-client --listen localhost:5678"
+
 # gitlab-ci-local
 export GCL_NEEDS='true'
 export GCL_FILE='.gitlab-ci.yml'
