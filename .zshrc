@@ -151,8 +151,6 @@ alias get_cekeikon='source ~/cekeikon5/bin/ativa_cekcpu'
 
 # Copy current path to clipboard
 alias cpwd='pwd | xclip -selection clipboard'
-source ~/.work_env 2> /dev/null
-source ~/.personal_env 2> /dev/null
 
 # ESP32
 alias get_idf='. $HOME/tools/esp-idf-v4.4/export.sh'
@@ -301,3 +299,6 @@ export GCL_TIMESTAMPS=true # or --timestamps: show timestamps in logs
 export GCL_MAX_JOB_NAME_PADDING=30 # or --maxJobNamePadding: limit padding around job name
 export GCL_QUIET=true # or --quiet: Suppress all job output
 alias gcl='gitlab-ci-local'
+
+source ~/.work_env 2> /dev/null
+source ~/.personal_env 2> /dev/null
