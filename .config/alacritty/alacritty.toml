@@ -6,42 +6,42 @@ key = "Return"
 mods = "Control|Shift"
 
 [[keyboard.bindings]]
-chars = "\u0002v"
+chars = "\u0001v"
 key = "T"
 mods = "Control|Shift"
 
 [[keyboard.bindings]]
-chars = "\u0002x"
+chars = "\u0001x"
 key = "W"
 mods = "Control|Shift"
 
 [[keyboard.bindings]]
-chars = "\u0002c"
+chars = "\u0001c"
 key = "N"
 mods = "Control|Shift"
 
 [[keyboard.bindings]]
-chars = "\u0002k"
+chars = "\u0001k"
 key = "K"
 mods = "Control"
 
 [[keyboard.bindings]]
-chars = "\u0002j"
+chars = "\u0001j"
 key = "J"
 mods = "Control"
 
 [[keyboard.bindings]]
-chars = "\u0002t"
+chars = "\u0001t"
 key = "J"
 mods = "Control|Shift"
 
 [[keyboard.bindings]]
-chars = "\u0002n"
+chars = "\u0001n"
 key = "Tab"
 mods = "Control"
 
 [[keyboard.bindings]]
-chars = "\u0002p"
+chars = "\u0001p"
 key = "Tab"
 mods = "Control|Shift"
 
