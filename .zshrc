@@ -87,6 +87,7 @@ plugins=(
 	gitignore
 	colored-man-pages
 	vi-mode
+	pdm
 )
 
 source $ZSH/oh-my-zsh.sh
