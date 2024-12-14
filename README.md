@@ -122,13 +122,21 @@ Follow the steps to install oh-my-zsh from [repository](https://ohmyz.sh/#instal
 #### TMUX
 
 This section is based on the [TMUX plugin manager repository](https://github.com/tmux-plugins/tpm).
+
+Install tmux plugin manager:
+
+```bash
+git clone https://github.com/tmux-plugins/tpm ~/.config/tmux/plugins/tpm
+```
+
+
 Go to the TMUX file:
 
 ```
 v ~/.tmux.conf
 ```
 
-Execute <C-b><S-i> to install the plugins.
+Execute <C-a><S-i> to install the plugins.
 
 #### Fuzzy finder
 In order to use the `zsh` fuzzy finder, you must clone their [repository](https://github.com/junegunn/fzf).
