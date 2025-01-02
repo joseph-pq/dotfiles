@@ -7,7 +7,7 @@ function lazy_nvm {
   if [ -d "${HOME}/.nvm" ]; then
     export NVM_DIR="$HOME/.nvm"
     [ -s "$NVM_DIR/nvm.sh" ] && . "$NVM_DIR/nvm.sh" # linux
-    [ -s "$(brew --prefix nvm)/nvm.sh" ] && source $(brew --prefix nvm)/nvm.sh # osx
+    [ -s "${NVM_DIR}/nvm.sh" ] && source ${NVM_DIR}/nvm.sh # osx
   fi
 }
 
