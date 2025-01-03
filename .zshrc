@@ -93,6 +93,8 @@ plugins=(
 source $ZSH/oh-my-zsh.sh
 
 # User configuration
+# Set size
+tabs 4
 
 # export MANPATH="/usr/local/man:$MANPATH"
 
@@ -108,20 +110,22 @@ else
   export VISUAL='nvim'
 fi
 
-# Compilation flags
-# export ARCHFLAGS="-arch x86_64"
-
-GOTO_PATHS=""
-
 export PATH="$PATH:$HOME/bin"
 export PATH="$PATH:$HOME/.local/bin"
 
-# ARM
-export PATH="$PATH:$HOME/Programs/gcc-arm-none-eabi-9-2020-q2-update/bin"
-export PATH="$PATH:$HOME/Programs/gcc-arm-10.2-2020.11-x86_64-arm-none-linux-gnueabihf/bin"
-export PATH="$PATH:$HOME/STM32MPU_workspace/STM32MPU-Tools/STM32CubeProgrammer-x.y.z/bin"
-export PATH="$PATH:/opt/gcc-arm-none-eabi-10-2020-q4-major/bin"
-export PATH="$PATH:/opt/cross-gcc-8.3.0-pi_3+/cross-pi-gcc-8.3.0-2/bin"
+# To customize prompt, run `p10k configure` or edit ~/.p10k.zsh.
+[[ ! -f ~/.p10k.zsh ]] || source ~/.p10k.zsh
+
+# zsh highlight
+source /usr/share/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh
+
+GOTO_PATHS=""
+. ~/bin/goto
+
+# Copy current path to clipboard
+alias cpwd='echo $(pwd) | tr -d "\n" | xclip -selection clipboard'
+
+alias bat="batcat"
 
 # >>> conda initialize >>>
 # !! Contents within this block are managed by 'conda init' !!
@@ -138,28 +142,26 @@ fi
 unset __conda_setup
 # <<< conda initialize <<<
 
+# ARM
+export PATH="$PATH:$HOME/Programs/gcc-arm-none-eabi-9-2020-q2-update/bin"
+export PATH="$PATH:$HOME/Programs/gcc-arm-10.2-2020.11-x86_64-arm-none-linux-gnueabihf/bin"
+export PATH="$PATH:$HOME/STM32MPU_workspace/STM32MPU-Tools/STM32CubeProgrammer-x.y.z/bin"
+export PATH="$PATH:/opt/gcc-arm-none-eabi-10-2020-q4-major/bin"
+export PATH="$PATH:/opt/cross-gcc-8.3.0-pi_3+/cross-pi-gcc-8.3.0-2/bin"
+
 # Valgrind
 alias vg_mem='valgrind --leak-check=full -v --track-origins=yes'
 
-# Set size
-tabs 4
-
 # Git
 alias config="/usr/bin/git --git-dir=${HOME}/.cfg/ --work-tree=${HOME}"
-
-# Cekeikon
-alias get_cekeikon='source ~/cekeikon5/bin/ativa_cekcpu'
-
-# Copy current path to clipboard
-alias cpwd='pwd | xclip -selection clipboard'
 
 # ESP32
 alias get_idf='. $HOME/tools/esp-idf-v4.4/export.sh'
 alias get_idf_5='. $HOME/tools/esp-idf-release-v5.0/export.sh'
 alias genEspIdfYcm='~/.vim/bundle/YCM-Generator/config_gen.py -c $(which xtensa-esp32-elf-gcc) --verbose --preserve-environment .'
 
+# Fuzzyfinder
 [ -f ~/.fzf.zsh ] && source ~/.fzf.zsh
-
 # export FZF_DEFAULT_OPS="--extended"
 export FZF_DEFAULT_COMMAND="fd --hidden"
 export FZF_CTRL_T_COMMAND="$FZF_DEFAULT_COMMAND"
@@ -177,25 +179,16 @@ alias gitll='g log --oneline --decorate'
 alias gits='git status'
 alias gitd='git diff'
 alias gitt='git --no-pager tag'
-. ~/bin/goto
 
-# To customize prompt, run `p10k configure` or edit ~/.p10k.zsh.
-[[ ! -f ~/.p10k.zsh ]] || source ~/.p10k.zsh
 alias dps='docker ps -a --format "table {{.Image}}\t{{.Status}}\t{{.Names}}"'
 alias git-sninppest='bat .oh-my-zsh/plugins/git/README.md'
 alias t="tree -I 'venv|__pycache__|*.tar.gz|build*|*.npy'"
-
-# zsh highlight
-source /usr/share/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh
 
 # Java
 # export JAVA_HOME="/usr/lib/jvm/java-8-openjdk-amd64/jre"
 # export JAVA_HOME="/usr/lib/jvm/default-java/"
 export JAVA_HOME="/usr/lib/java/jdk-17"
 
-# Contiki
-export CNG_PATH="${HOME}/tools/contiki-ng-43"
-alias contiker="docker run --privileged --sysctl net.ipv6.conf.all.disable_ipv6=0 --mount type=bind,source=$CNG_PATH,destination=/home/user/contiki-ng -e DISPLAY=$DISPLAY -v /tmp/.X11-unix:/tmp/.X11-unix -v /dev/bus/usb:/dev/bus/usb -ti contiker/contiki-ng"
 # cuda
 # export LD_LIBRARY_PATH="/usr/local/cuda/lib64:$LD_LIBRARY_PATH"
 # export LD_LIBRARY_PATH="/usr/local/cuda/include/:$LD_LIBRARY_PATH"
@@ -204,15 +197,13 @@ export TF_CPP_MIN_LOG_LEVEL='3'
 
 # Node Version Manager
 export NVM_DIR="$HOME/.nvm"
- [ -s "$NVM_DIR/nvm.sh" ] && \. "$NVM_DIR/nvm.sh"  # This loads nvm
- [ -s "$NVM_DIR/bash_completion" ] && \. "$NVM_DIR/bash_completion"  # This loads nvm bash_completion
-alias grep='grep --color=auto --exclude-dir={.bzr,CVS,.git,.hg,.svn,.idea,.tox,.venv,.mypy_cache,.pytest_cache,.cache,.eggs,build,dist,node_modules,__pycache__,venv}'
 source ~/.config/zfunc/lazy-nvm.sh
+ # [ -s "$NVM_DIR/nvm.sh" ] && \. "$NVM_DIR/nvm.sh"  # This loads nvm
+ # [ -s "$NVM_DIR/bash_completion" ] && \. "$NVM_DIR/bash_completion"  # This loads nvm bash_completion
 
 # Poetry
-fpath+=~/.config/zfunc
-autoload -Uz compinit && compinit
-alias decolor="sed $'s/\e\\[[0-9;:]*[a-zA-Z]//g' | sed 's/\r//g' | sed 's/\^\[\[0;31m//g' | sed 's/\^\[\[0;31m//g' | sed 's/\^\[\[0m//g' | sed 's/\^M\\$//g'"
+# fpath+=~/.config/zfunc
+# autoload -Uz compinit && compinit  # This slows down shell startup
 alias pp='poetry run python'
 alias pt='poetry run pytest -vvx'
 alias ptd='poetry run pytest --log-cli-level=DEBUG'
@@ -270,6 +261,8 @@ alias get_size="du -sh $(ls -A) | sort -h | tac | head"
 alias zshconfig="nvim ~/.zshrc"
 alias zshsource="source ~/.zshrc"
 alias lss="ls -lhtr"
+alias grep='grep --color=auto --exclude-dir={.bzr,CVS,.git,.hg,.svn,.idea,.tox,.venv,.mypy_cache,.pytest_cache,.cache,.eggs,build,dist,node_modules,__pycache__,venv}'
+alias decolor="sed $'s/\e\\[[0-9;:]*[a-zA-Z]//g' | sed 's/\r//g' | sed 's/\^\[\[0;31m//g' | sed 's/\^\[\[0;31m//g' | sed 's/\^\[\[0m//g' | sed 's/\^M\\$//g'"
 
 # Github Copilot
 alias ghc="gh copilot suggest"
