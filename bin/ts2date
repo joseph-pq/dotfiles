@@ -1,0 +1,15 @@
+#!/usr/bin/python3
+
+# This script converts a timestamp to a human readable date
+import datetime as dt
+import sys
+
+if len(sys.argv) != 2:
+    print("Usage: ts2date <timestamp>")
+    sys.exit(1)
+ts = float(sys.argv[1])
+if ts > 9999999999:
+    ts /= 1000
+date = dt.datetime.fromtimestamp(ts, dt.timezone.utc)
+date = date.astimezone()
+print(date.strftime('%Y-%m-%d %H:%M:%S%z'))
