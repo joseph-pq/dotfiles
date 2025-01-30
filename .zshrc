@@ -163,6 +163,9 @@ alias get_idf='. $HOME/tools/esp-idf-v4.4/export.sh'
 alias get_idf_5='. $HOME/tools/esp-idf-release-v5.0/export.sh'
 alias genEspIdfYcm='~/.vim/bundle/YCM-Generator/config_gen.py -c $(which xtensa-esp32-elf-gcc) --verbose --preserve-environment .'
 
+# llvm
+export PATH="$PATH:/opt/clangd_19.1.2/bin/"
+
 # Fuzzyfinder
 [ -f ~/.fzf.zsh ] && source ~/.fzf.zsh
 # export FZF_DEFAULT_OPS="--extended"
