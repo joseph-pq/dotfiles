@@ -119,6 +119,9 @@ export PATH="$PATH:$HOME/.local/bin"
 # zsh highlight
 source /usr/share/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh
 
+# direnv
+eval "$(direnv hook zsh)"
+
 GOTO_PATHS=""
 . ~/bin/goto
 
