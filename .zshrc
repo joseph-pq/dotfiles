@@ -204,12 +204,10 @@ source ~/.config/zfunc/lazy-nvm.sh
  # [ -s "$NVM_DIR/nvm.sh" ] && \. "$NVM_DIR/nvm.sh"  # This loads nvm
  # [ -s "$NVM_DIR/bash_completion" ] && \. "$NVM_DIR/bash_completion"  # This loads nvm bash_completion
 
-# Poetry
-# fpath+=~/.config/zfunc
-# autoload -Uz compinit && compinit  # This slows down shell startup
-alias pp='poetry run python'
-alias pt='poetry run pytest -vvx'
-alias ptd='poetry run pytest --log-cli-level=DEBUG'
+# UV
+alias pp='uv run python'
+alias pt='uv run pytest -vvx'
+alias ptd='uv run pytest --log-cli-level=DEBUG'
 
 # Ruby Gems
 export GEM_HOME="$HOME/gems"
