@@ -8,7 +8,7 @@ Execute this command in order to execute dependencies:
 
 ```bash
 sudo apt update
-sudo apt install -y tmux git curl zsh zsh-syntax-highlighting xclip ripgrep libfuse2
+sudo apt install -y tmux git curl zsh zsh-syntax-highlighting xclip ripgrep libfuse2 direnv
 
 ```
 
