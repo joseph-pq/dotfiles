@@ -93,6 +93,7 @@ plugins=(
 source $ZSH/oh-my-zsh.sh
 
 # User configuration
+DISABLE_MAGIC_FUNCTIONS="true"
 # Set size
 tabs 4
 
