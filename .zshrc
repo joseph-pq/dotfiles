@@ -210,7 +210,7 @@ source ~/.config/zfunc/lazy-nvm.sh
 
 # UV
 alias pp='uv run python'
-alias ppi='uv run ipython --matplotlib'
+alias ppi='uv run ipython --matplotlib --TerminalInteractiveShell.editing_mode=vi'
 alias ppd='uv run python -m debugpy --wait-for-client --listen localhost:5678'
 alias pt='uv run pytest -vvx'
 alias ptd='uv run pytest --log-cli-level=DEBUG'
