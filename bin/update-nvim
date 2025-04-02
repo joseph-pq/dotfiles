@@ -4,17 +4,17 @@
 
 TGT_DIR="$HOME/.local/bin/"
 cd "$TGT_DIR"
-if test -f "$TGT_DIR/nvim.appimage"; then
-    mv nvim.appimage nvim.appimage.old
-fi
 
-wget https://github.com/neovim/neovim/releases/download/nightly/nvim.appimage.sha256sum -q -O  nvim.appimage.sha256sum
-wget https://github.com/neovim/neovim/releases/download/nightly/nvim.appimage -q -O nvim.appimage
+wget https://github.com/neovim/neovim/releases/download/nightly/shasum.txt -q -O nvim.appimage.sha256sum
+wget https://github.com/neovim/neovim/releases/download/nightly/nvim-linux-x86_64.appimage -q
 
-PROCEED="$(sha256sum -c nvim.appimage.sha256sum)"
+PROCEED=$(echo "$(grep x86_64.appimage$ nvim.appimage.sha256sum)" | sha256sum --check --status)
+WORKED=$?
 
-if [[ $PROCEED =~ "OK" ]]; then
+# exit
+if [[ $WORKED == 0 ]]; then
     echo "Update Successful: Checksum OK"
+    mv nvim-linux-x86_64.appimage nvim.appimage
     chmod u+x nvim.appimage
     ln -sf "$TGT_DIR/nvim.appimage" "$TGT_DIR/nvim"
     nvim_version=$(nvim --version | grep -oP 'NVIM v\K\S+')
@@ -22,10 +22,7 @@ if [[ $PROCEED =~ "OK" ]]; then
 else
     echo "Checksum Failed: Rolling back"
     notify-send "Checksum Failed: Rolling back"
-    rm nvim.appimage
-    mv nvim.appimage.old nvim.appimage
+    rm nvim-linux-x86_64.appimage
 fi
 
-if test -f "$TGT_DIR/nvim.appimage.old"; then
-    rm nvim.appimage.old
-fi
+rm nvim.appimage.sha256sum
