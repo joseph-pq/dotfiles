@@ -189,7 +189,7 @@ alias gitt='git --no-pager tag'
 
 alias dps='docker ps -a --format "table {{.Image}}\t{{.Status}}\t{{.Names}}"'
 alias git-sninppest='bat .oh-my-zsh/plugins/git/README.md'
-alias t="tree -I 'venv|__pycache__|*.tar.gz|build*|*.npy'"
+alias t="tree -I 'venv|__pycache__|*.tar.gz|build*'"
 
 # Java
 # export JAVA_HOME="/usr/lib/jvm/java-8-openjdk-amd64/jre"
