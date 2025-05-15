@@ -182,7 +182,7 @@ alias cmakesanitizer='cmake .. -DCMAKE_CXX_FLAGS="-fsanitize=address  -fsanitize
 
 # Git shortchuts
 alias gitl='git log --graph --reflog'
-alias gitll='g log --oneline --decorate'
+alias gitll='git log --oneline --graph --decorate --all'
 alias gits='git status'
 alias gitd='git diff'
 alias gitt='git --no-pager tag'
