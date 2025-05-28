@@ -301,3 +301,6 @@ alias gcl='gitlab-ci-local'
 source ~/.work_env 2> /dev/null
 source ~/.personal_env 2> /dev/null
 export PATH="$PATH:$HOME/.nvm/versions/node/v20.13.1/bin"
+
+autoload -U +X bashcompinit && bashcompinit
+complete -o nospace -C /usr/bin/terraform terraform
