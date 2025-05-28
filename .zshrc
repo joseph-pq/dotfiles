@@ -186,6 +186,7 @@ alias gitll='git log --oneline --graph --decorate --all'
 alias gits='git status'
 alias gitd='git diff'
 alias gitt='git --no-pager tag'
+alias gcs='git commit --verbose --gpg-sign'
 
 alias dps='docker ps -a --format "table {{.Image}}\t{{.Status}}\t{{.Names}}"'
 alias git-sninppest='bat .oh-my-zsh/plugins/git/README.md'
