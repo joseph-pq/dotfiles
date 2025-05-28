@@ -1,4 +1,4 @@
-import = ["~/.local/share/nvim/lazy/kanagawa.nvim/extras/alacritty_kanagawa.toml"]
+import = ["~/.config/alacritty/themes/alacritty-theme/themes/tokyo-night.toml"]
 
 [[keyboard.bindings]]
 action = "SpawnNewInstance"
