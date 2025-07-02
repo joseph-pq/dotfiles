@@ -217,6 +217,7 @@ alias pt='uv run pytest -vvx'
 alias ptd='uv run pytest --log-cli-level=DEBUG'
 alias ptdd='uv run python -m debugpy --wait-for-client --listen localhost:5678 -m pytest'
 export UV_LINK_MODE='symlink'
+eval "$(uv generate-shell-completion zsh)"
 
 # Ruby Gems
 export GEM_HOME="$HOME/gems"
