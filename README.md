@@ -28,7 +28,7 @@ source ~/.bashrc
 config remote  add origin https://github.com/JosephPenaQuino/dotfiles.git
 config checkout master
 config branch --set-upstream-to=origin/master master
-config pull
+config pull origin master
 ```
 
 ### Directory structure
@@ -58,7 +58,8 @@ Based on [Neovim's repository](https://github.com/neovim/neovim/releases):
 
 ```bash
 cd ~/programs
-wget https://github.com/neovim/neovim/releases/download/v0.10.0/nvim.appimage
+wget https://github.com/neovim/neovim/releases/download/v0.11.2/nvim-linux-x86_64.appimage
+mv nvim-linux-x86_64.appimage nvim.appimage
 chmod u+x nvim.appimage
 sudo ln -s $HOME/programs/nvim.appimage /usr/local/bin/nvim
 sudo ln -s $HOME/programs/nvim.appimage /usr/local/bin/v
