@@ -163,3 +163,7 @@ From [Vale's documentation](https://vale.sh/docs/vale-cli/installation/):
 ```bash
 sudo snap install vale
 ```
+
+### Lazy git
+
+Follow [doc](https://github.com/jesseduffield/lazygit?tab=readme-ov-file#debian-and-ubuntu)
