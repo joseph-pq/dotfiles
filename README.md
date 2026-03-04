@@ -52,6 +52,12 @@ Then check in https://nodejs.org/en and install the latest version
 nvm install vX.Y.Z
 ```
 
+Enable yarn:
+```bash
+corepack enable  # enable it once
+corepack prepare yarn@stable --activate  # activate yarn
+```
+
 #### Neovim
 
 Based on [Neovim's repository](https://github.com/neovim/neovim/releases):
@@ -167,3 +173,5 @@ sudo snap install vale
 ### Lazy git
 
 Follow [doc](https://github.com/jesseduffield/lazygit?tab=readme-ov-file#debian-and-ubuntu)
+
+
