@@ -206,8 +206,8 @@ export TF_CPP_MIN_LOG_LEVEL='3'
 # Node Version Manager
 export NVM_DIR="$HOME/.nvm"
 source ~/.config/zfunc/lazy-nvm.sh
- # [ -s "$NVM_DIR/nvm.sh" ] && \. "$NVM_DIR/nvm.sh"  # This loads nvm
- # [ -s "$NVM_DIR/bash_completion" ] && \. "$NVM_DIR/bash_completion"  # This loads nvm bash_completion
+[ -s "$NVM_DIR/nvm.sh" ] && \. "$NVM_DIR/nvm.sh"  # This loads nvm
+[ -s "$NVM_DIR/bash_completion" ] && \. "$NVM_DIR/bash_completion"  # This loads nvm bash_completion
 
 # UV
 alias pp='uv run python'
@@ -301,7 +301,7 @@ alias gcl='gitlab-ci-local'
 
 source ~/.work_env 2> /dev/null
 source ~/.personal_env 2> /dev/null
-export PATH="$PATH:$HOME/.nvm/versions/node/v24.3.0/bin"
+# export PATH="$PATH:$HOME/.nvm/versions/node/v24.3.0/bin"
 
 autoload -U +X bashcompinit && bashcompinit
 complete -o nospace -C /usr/bin/terraform terraform
